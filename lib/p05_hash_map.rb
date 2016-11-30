@@ -32,6 +32,10 @@ class HashMap
     @store[ind].get(key)
   end
 
+  def getLink(key)
+    ind = key.hash % num_buckets
+    @store[ind].getLink(key)
+  end
   def delete(key)
     ind = key.hash % num_buckets
     @count -= 1

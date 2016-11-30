@@ -30,7 +30,7 @@ describe LRUCache do
     it "should eject least recently used items out of cache" do
       lru = LRUCache.new(3, prc)
 
-      expect(prc).to receive(:call).exactly(2).times.with(0)
+      expect(prc).to receive(:call).exactly(1).times.with(0)
       1.upto(3) do |i|
         expect(prc).to receive(:call).exactly(1).times.with(i)
       end
